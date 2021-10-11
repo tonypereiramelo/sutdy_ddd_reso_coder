@@ -20,7 +20,8 @@ class NoteWatcherBloc extends Bloc<NoteWatcherEvent, NoteWatcherState> {
   NoteWatcherBloc(this._noteRepository)
       : super(const NoteWatcherState.initial());
 
-  StreamSubscription<Either<NoteFailure, KtList<Note>>> _noteStreamSubscription;
+  StreamSubscription<Either<NoteFailure, KtList<Note>>>?
+      _noteStreamSubscription;
   @override
   Stream<NoteWatcherState> mapEventToState(
     NoteWatcherEvent event,
@@ -28,7 +29,7 @@ class NoteWatcherBloc extends Bloc<NoteWatcherEvent, NoteWatcherState> {
     yield* event.map(
       watchAllStarted: (e) async* {
         yield const NoteWatcherState.loadInProgress();
-        await _noteStreamSubscription.cancel();
+        await _noteStreamSubscription?.cancel();
         _noteStreamSubscription = _noteRepository.watchAll().listen(
               (failureOrNotes) =>
                   add(NoteWatcherEvent.notesReceived(failureOrNotes)),
@@ -36,7 +37,7 @@ class NoteWatcherBloc extends Bloc<NoteWatcherEvent, NoteWatcherState> {
       },
       watchUncompletedStarted: (e) async* {
         yield const NoteWatcherState.loadInProgress();
-        await _noteStreamSubscription.cancel();
+        await _noteStreamSubscription?.cancel();
         _noteStreamSubscription = _noteRepository.watchUncompleted().listen(
               (failureOrNotes) =>
                   add(NoteWatcherEvent.notesReceived(failureOrNotes)),
@@ -53,7 +54,7 @@ class NoteWatcherBloc extends Bloc<NoteWatcherEvent, NoteWatcherState> {
 
   @override
   Future<void> close() async {
-    await _noteStreamSubscription.cancel();
+    await _noteStreamSubscription?.cancel();
     return super.close();
   }
 }
