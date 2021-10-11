@@ -1,5 +1,30 @@
 {
     "conventionalCommits.scopes": [
         "infra"
-    ]
+    ],
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true,
+        "lib\\infrastructure\\notes/note_dtos.freezed.dart": true,
+        "**/note_dtos.freezed.dart": true,
+        "note_dtos.freezed.dart": true,
+        "lib\\infrastructure\\notes/note_dtos.g.dart": true,
+        "**/note_dtos.g.dart": true,
+        "note_dtos.g.dart": true,
+        "lib\\domain\\auth/auth_failure.freezed.dart": true,
+        "**/auth_failure.freezed.dart": true,
+        "auth_failure.freezed.dart": true,
+        "lib\\domain\\auth/user.freezed.dart": true,
+        "**/user.freezed.dart": true,
+        "user.freezed.dart": true
+    },
+    "explorerExclude.backup": null
 }
