@@ -1,0 +1,26 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  errors:
+    missing_required_param: error
+    missing_return: error
+    must_be_immutable: error
+    sort_unnamed_constructors_first: ignore
+exclude:
+    - "*g.dart"
+    - "*.freezed.dart"
+    - "lib/**/*.g.dart"
+    - "lib/**/*.freezed.dart"
+
+linter:
+  
+  
+  
+  
+  
+  rules:
+    
+    
+
+
+
