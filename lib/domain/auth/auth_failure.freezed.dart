@@ -396,7 +396,7 @@ class _$EmailAlreadyInUse
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      .add(DiagnosticsProperty('type', 'AuthFailure.emailAlreadyInUse'));
+        .add(DiagnosticsProperty('type', 'AuthFailure.emailAlreadyInUse'));
   }
 
   @override
@@ -526,9 +526,8 @@ class _$InvalidEmailAndPassworCombination
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      .add(DiagnosticsProperty(
-          'type', 'AuthFailure.invalidEmailAndPassworCombination'));
+    properties.add(DiagnosticsProperty(
+        'type', 'AuthFailure.invalidEmailAndPassworCombination'));
   }
 
   @override
