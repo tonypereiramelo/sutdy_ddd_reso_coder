@@ -2,7 +2,8 @@
     "conventionalCommits.scopes": [
         "infra",
         "aplication",
-        "files"
+        "files",
+        "aplication"
     ],
     "files.exclude": {
         "**/.git": true,
